@@ -5,6 +5,8 @@
  */
 package hue1;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,6 +20,9 @@ public class EratosthenesPrimeSieve {
      */
     static int[] primeArray = null;
     static int[] evenArray = null;
+
+    static List<Integer> primes = new ArrayList<>();
+    static List<Integer> evens = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in, "Windows-1252");
@@ -33,4 +38,38 @@ public class EratosthenesPrimeSieve {
 
     }
 
+    public boolean isPrime(int p) {
+        if (p <= 1) {
+            return false;
+        }
+        if (p == 2) {
+            return true;
+        }
+
+        for (int i = 2; i < p; i++) {
+
+            if (p % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void primesList() {
+        for (int i = 0; i < primeArray.length; i++) {
+            primeArray[i] = i;
+        }
+        for (int i = 0; i < primeArray.length; i++) {
+            if (isPrime(primeArray[i]) == false) {
+                primeArray[i] = -1;
+            }
+        }
+        for (int i = 0; i < primeArray.length; i++) {
+            if (primeArray[i] != -1) {
+                primes.add(primeArray[i]);
+                // System.out.println(primeArray[i]);
+            }
+        }
+
+    }
 }
