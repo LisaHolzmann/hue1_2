@@ -72,4 +72,16 @@ public class EratosthenesPrimeSieve {
         }
 
     }
+
+    public boolean isEven(int p) {
+
+        if (p <= 2) {
+            return false;
+        }
+
+        if (p % 2 == 0) {
+            return true;
+        }
+        return false;
+    }
 }
