@@ -84,4 +84,22 @@ public class EratosthenesPrimeSieve {
         }
         return false;
     }
+
+    public void evenList() {
+        for (int i = 0; i < evenArray.length; i++) {
+            evenArray[i] = i;
+        }
+        for (int i = 0; i < evenArray.length; i++) {
+            if (isEven(evenArray[i]) == false) {
+                evenArray[i] = -1;
+            }
+        }
+        for (int i = 0; i < evenArray.length; i++) {
+            if (evenArray[i] != -1) {
+                evens.add(evenArray[i]);
+                // System.out.println(evenArray[i]);
+            }
+        }
+
+    }
 }
