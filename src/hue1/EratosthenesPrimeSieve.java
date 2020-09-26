@@ -30,6 +30,10 @@ public class EratosthenesPrimeSieve {
         int ausw = Integer.parseInt(scanner.nextLine());
         EratosthenesPrimeSieve ep = new EratosthenesPrimeSieve(ausw);
 
+        ep.primesList();
+        ep.evenList();
+        ep.printResults();
+
     }
 
     public EratosthenesPrimeSieve(int grenze) {
