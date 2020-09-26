@@ -102,4 +102,23 @@ public class EratosthenesPrimeSieve {
         }
 
     }
+
+    public void printResults() {
+        for (int n = 0; n < evens.size(); n++) {
+            for (int i = 0; i < primes.size(); i++) {
+                boolean found = false;
+                for (int j = 0; j < primes.size(); j++) {
+                    if (primes.get(i) + primes.get(j) == evens.get(n)) {
+                        System.out.println(evens.get(n) + ":" + primes.get(i) + "+" + primes.get(j));
+                        found = true;
+                        break;
+                    }
+
+                }
+                if (found) {
+                    break;
+                }
+            }
+        }
+    }
 }
